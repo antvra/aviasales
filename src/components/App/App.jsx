@@ -15,7 +15,7 @@ const App = () => {
         <Logo />
       </Header>
       <Layout style={{ padding: '0 50px' }}>
-        <Sider theme="light" width="232">
+        <Sider theme="light" width="auto">
           <TransferFilter />
         </Sider>
         <Content>

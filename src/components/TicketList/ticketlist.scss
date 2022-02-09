@@ -36,3 +36,18 @@
     }
   }
 }
+
+@media only screen and (max-device-width: 720px) {
+  .ant-list {
+    &-grid .ant-col > .ant-list-item {
+      margin-bottom: 20px;
+    }
+    &-item {
+      .ant-radio-group {
+        .ant-radio-button-wrapper {
+          font-size: 7px;
+        }
+      }
+    }
+  }
+}
