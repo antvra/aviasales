@@ -1,0 +1,19 @@
+.ant-layout {
+  .ant-layout-header {
+    padding: 50px 0;
+    height: auto;
+    line-height: 0;
+    background: none;
+  }
+  .ant-layout-sider {
+    max-height: 252px;
+  }
+
+  .ant-layout-has-sider {
+    column-gap: 20px;
+  }
+}
+.wrapper {
+  max-width: 854px;
+  margin: 0 auto;
+}

@@ -1,0 +1,54 @@
+.ant-list-item .ant-card {
+  border-radius: 5px;
+  .ant-card-body {
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+}
+
+.ticket {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: #2196f3;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+  }
+  &__destinate-from,
+  &__destinate-out {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__destinate-from {
+    margin-bottom: 10px;
+  }
+  &__destinate,
+  &__waytime,
+  &__transfer {
+    display: flex;
+    flex-direction: column;
+  }
+  &__span-gray {
+    color: #a0b0b9;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+  &__span-black {
+    color: #4a4a4a;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
