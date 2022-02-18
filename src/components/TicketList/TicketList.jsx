@@ -1,8 +1,9 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
 import { Radio, List, Button } from 'antd';
+
 import Ticket from '../Ticket';
-import './ticketlist.scss';
+import './TicketList.scss';
 
 const TicketList = () => {
   return (

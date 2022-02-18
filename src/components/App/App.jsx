@@ -1,10 +1,11 @@
 /* eslint-disable arrow-body-style */
-/* eslint-disable react/jsx-no-undef */
+import React from 'react';
 import { Layout } from 'antd';
+
 import Logo from '../Logo';
 import TransferFilter from '../TransferFilter';
 import TicketList from '../TicketList';
-import './app.scss';
+import './App.scss';
 
 const { Header, Sider, Content } = Layout;
 

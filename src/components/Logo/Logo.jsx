@@ -1,5 +1,5 @@
 import logo from '../../assets/img/logo.png';
-import './logo.scss';
+import './Logo.scss';
 
 const Logo = () => (
   <div className="logo__wrapper">

@@ -1,39 +1,48 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable arrow-body-style */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Checkbox } from 'antd';
-import './transferfilter.scss';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { changeFilter } from '../../store/actions';
+import './TransferFilter.scss';
 
 const checkBoxProps = [
   {
-    name: 'all',
+    name: 'allTransfers',
     label: 'Все',
   },
   {
-    name: '0',
+    name: 'zeroTransfers',
     label: 'Без пересадок',
   },
   {
-    name: '1',
+    name: 'oneTransfer',
     label: '1 пересадка',
   },
   {
-    name: '2',
+    name: 'twoTransfers',
     label: '2 пересадки',
   },
   {
-    name: '3',
+    name: 'threeTransfers',
     label: '3 пересадки',
   },
 ];
 
 const TransferFilter = () => {
+  const dispatch = useDispatch();
+  const useChecked = (element) => useSelector((state) => state.transferReducer[element]);
   return (
     <div className="filter-card">
       <h3 className="filter-card__title">Количество пересадок</h3>
       <div className="filter-card__properties">
-        {checkBoxProps.map((el) => (
-          <Checkbox name={el.name} key={el.name}>
-            {el.label}
+        {checkBoxProps.map((element) => (
+          <Checkbox
+            name={element.name}
+            key={element.name}
+            checked={useChecked(element.name)}
+            onChange={() => dispatch(changeFilter(element.name))}
+          >
+            {element.label}
           </Checkbox>
         ))}
       </div>

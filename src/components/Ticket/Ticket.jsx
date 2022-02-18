@@ -1,8 +1,9 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
 import { Card } from 'antd';
+
 import companyLogo from '../../assets/img/S7logo.png';
-import './ticket.scss';
+import './Ticket.scss';
 
 const Ticket = () => {
   return (
