@@ -1,4 +1,5 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+import React from 'react';
+
 import { Checkbox } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -28,21 +29,31 @@ const checkBoxProps = [
   },
 ];
 
+const createNewFilterState = (oldState, filterName) => {
+  const newFilterState = { ...oldState, [filterName]: !oldState[filterName] };
+  if (filterName === 'allTransfers') {
+    Object.keys(newFilterState).forEach((filter) => {
+      newFilterState[filter] = !newFilterState.allTransfers;
+    });
+  }
+  return { ...newFilterState, allTransfers: !Object.values(newFilterState).slice(1).includes(false) };
+};
+
 const TransferFilter = () => {
+  const state = useSelector((state) => state.transfers);
   const dispatch = useDispatch();
-  const useChecked = (element) => useSelector((state) => state.transferReducer[element]);
   return (
     <div className="filter-card">
       <h3 className="filter-card__title">Количество пересадок</h3>
       <div className="filter-card__properties">
-        {checkBoxProps.map((element) => (
+        {checkBoxProps.map((filter) => (
           <Checkbox
-            name={element.name}
-            key={element.name}
-            checked={useChecked(element.name)}
-            onChange={() => dispatch(changeFilter(element.name))}
+            name={filter.name}
+            key={filter.name}
+            checked={state[filter.name]}
+            onChange={() => dispatch(changeFilter(createNewFilterState(state, filter.name)))}
           >
-            {element.label}
+            {filter.label}
           </Checkbox>
         ))}
       </div>

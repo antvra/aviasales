@@ -1,3 +1,1 @@
-import TransferFilter from './TransferFilter';
-
-export default TransferFilter;
+export { default as TransferFilter } from './TransferFilter';
