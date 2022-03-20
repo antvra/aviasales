@@ -28,13 +28,10 @@ const TicketList = () => {
     if (transfers.allTransfers) return true;
 
     return Object.keys(transfers).some((transferName) => {
-      if (!transfers[transferName]) {
+      if (transfers[transferName] === false) {
         return false;
       }
-      return (
-        valuesForTransfers[transferName] &&
-        (stopsThere === valuesForTransfers[transferName] || stopsBack === valuesForTransfers[transferName])
-      );
+      return stopsThere === valuesForTransfers[transferName] || stopsBack === valuesForTransfers[transferName];
     });
   });
 
